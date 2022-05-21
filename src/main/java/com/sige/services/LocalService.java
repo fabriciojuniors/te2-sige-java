@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.ws.rs.WebApplicationException;
 
 /**
  *
@@ -58,6 +59,16 @@ public class LocalService {
         entityManager.merge(local);
         
         return local;
+    }
+    
+    public void delete(long id){
+        Local local = findById(id);
+        
+        if(local == null){
+            throw new WebApplicationException("Local não encontrado com ID " + id);
+        }
+                
+        entityManager.remove(local);
     }
    
 }

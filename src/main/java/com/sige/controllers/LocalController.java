@@ -9,6 +9,7 @@ import com.sige.services.LocalService;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -65,5 +66,11 @@ public class LocalController {
     @Path("/{id}")
     public Local update(@PathParam("id") long id, Local local){
         return service.update(id, local);
+    }
+    
+    @DELETE
+    @Path("/{id}")
+    public void delete(@PathParam("id") long id){
+        service.delete(id);
     }
 }
