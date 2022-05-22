@@ -1,0 +1,9 @@
+com\sige\controllers\ParceiroController.class
+com\sige\models\Local.class
+com\sige\enums\Estados.class
+com\sige\models\Parceiro.class
+com\sige\services\LocalService.class
+com\sige\JAXRSConfiguration.class
+com\sige\models\Endereco.class
+com\sige\controllers\LocalController.class
+com\sige\services\ParceiroService.class
