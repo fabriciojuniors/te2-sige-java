@@ -1,9 +1,14 @@
-C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\JAXRSConfiguration.java
 C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\services\LocalService.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\controllers\EventoController.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\enums\Status.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\models\Evento.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\models\Local.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\services\EventoService.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\enums\Estados.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\enums\ClassificacaoIndicativa.java
+C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\JAXRSConfiguration.java
 C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\controllers\ParceiroController.java
 C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\controllers\LocalController.java
-C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\models\Local.java
 C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\models\Endereco.java
-C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\enums\Estados.java
 C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\models\Parceiro.java
 C:\Users\fabri\OneDrive\Documentos\Faculdade\TE-II\sige-teii\src\main\java\com\sige\services\ParceiroService.java
