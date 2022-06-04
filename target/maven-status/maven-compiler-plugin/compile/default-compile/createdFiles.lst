@@ -5,9 +5,11 @@ com\sige\enums\Estados.class
 com\sige\enums\Status.class
 com\sige\models\Parceiro.class
 com\sige\controllers\EventoController.class
+com\sige\configs\WebApplicationExceptionMapper.class
 com\sige\enums\ClassificacaoIndicativa.class
 com\sige\services\LocalService.class
 com\sige\controllers\LocalController.class
+com\sige\configs\WebApplicationResponseModel.class
 com\sige\services\EventoService.class
 com\sige\JAXRSConfiguration.class
 com\sige\models\Endereco.class

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.sige"},{"l":"com.sige.configs"},{"l":"com.sige.controllers"},{"l":"com.sige.enums"},{"l":"com.sige.models"},{"l":"com.sige.services"}];updateSearchResults();

@@ -28,50 +28,50 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class EventoController {
-    
+
     @Inject
     EventoService service;
-    
+
     @GET
     public List<Evento> findAll(){
         return service.findAll();
     }
-    
+
     @GET
     @Path("/{id}")
     public Evento findById(@PathParam("id") long id){
-        
+
         Evento evento = service.findById(id);
-        
+
         if(evento == null){
             throw new WebApplicationException("Evento não encontrado com ID " + id);
         }
-        
+
         return evento;
-        
+
     }
-    
+
     @GET
     @Path("/busca/{nome}")
     public List<Evento> findByDescricao(@PathParam("nome") String nome){
         return service.findByNome(nome);
     }
-    
+
     @POST
     public Evento save(Evento evento){
         return service.save(evento);
     }
-    
+
     @PUT
     @Path("/{id}")
     public Evento update(@PathParam("id") long id, Evento evento){
         return service.update(id, evento);
     }
-    
+
     @DELETE
     @Path("/{id}")
     public void delete(@PathParam("id") long id){
         service.delete(id);
     }
-    
+
 }
