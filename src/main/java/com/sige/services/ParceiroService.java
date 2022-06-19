@@ -68,7 +68,7 @@ public class ParceiroService {
 
     public Parceiro save(Parceiro parceiro) {
 
-        Endereco endereco = parceiro.getEndereco();
+        Endereco endereco = parceiro.getEndereco();        
         entityManager.persist(endereco);
 
         parceiro.setEndereco(endereco);
@@ -109,7 +109,6 @@ public class ParceiroService {
     private void valida(Parceiro parceiro) {
 
         if (parceiro.getId() > 0) {
-            System.out.println("Ja cadastrado");
             if (existsByNome(parceiro.getRazaoSocial(), parceiro.getId())) {
                 throw new WebApplicationException("O parceiro " + parceiro.getRazaoSocial() + " já possui cadastro");
             }

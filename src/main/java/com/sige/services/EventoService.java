@@ -71,7 +71,7 @@ public class EventoService {
         evento.setLocal(local);
         evento.setParceiro(parceiro);
 
-        valida(evento);
+        valida(evento, null);
 
         entityManager.persist(evento);
 
@@ -80,14 +80,15 @@ public class EventoService {
 
     public Evento update(long id, Evento evento) {
         evento.setId(id);
-        
+
         Local local = localService.findById(evento.getLocal().getId());
         Parceiro parceiro = parceiroService.findById(evento.getParceiro().getId());
+        Evento savedEvento = findById(id);
 
         evento.setLocal(local);
         evento.setParceiro(parceiro);
-        
-        valida(evento);
+
+        valida(evento, savedEvento);
         entityManager.merge(evento);
 
         return evento;
@@ -103,12 +104,16 @@ public class EventoService {
         entityManager.remove(evento);
     }
 
-    private void valida(Evento evento) {
+    private void valida(Evento evento, Evento savedEvento) {
         List<String> msgs = new ArrayList<>();
 
         if (evento.getId() > 0) {
             if (!hasDisponibilidadeLocal(evento.getLocal(), evento.getDataHora(), evento.getId())) {
                 throw new WebApplicationException("O local " + evento.getLocal().getNome() + " não possui disponibilidade para a data desejada.", Response.Status.BAD_REQUEST);
+            }
+            
+            if(!savedEvento.getDataHora().equals(evento.getDataHora()) && LocalDateTime.now().isAfter(evento.getDataHora())){
+                throw new WebApplicationException("A data de realização do evento não pode ser retroativa", Response.Status.BAD_REQUEST);
             }
         } else {
             if (!hasDisponibilidadeLocal(evento.getLocal(), evento.getDataHora())) {
@@ -118,10 +123,10 @@ public class EventoService {
             if (evento.getStatus().equals(Status.FINALIZADO) || evento.getStatus().equals(Status.REPROVADO)) {
                 throw new WebApplicationException("Não é permitido o cadastro de eventos com status Finalizado ou Reprovado.", Response.Status.BAD_REQUEST);
             }
-        }
 
-        if (LocalDateTime.now().isAfter(evento.getDataHora())) {
-            throw new WebApplicationException("A data de realização do evento não pode ser retroativa", Response.Status.BAD_REQUEST);
+            if (LocalDateTime.now().isAfter(evento.getDataHora())) {
+                throw new WebApplicationException("A data de realização do evento não pode ser retroativa", Response.Status.BAD_REQUEST);
+            }
         }
 
     }

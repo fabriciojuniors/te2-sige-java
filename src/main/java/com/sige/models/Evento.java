@@ -64,11 +64,11 @@ public class Evento implements Serializable {
     @JsonbProperty(value = "data_hora")
     private LocalDateTime dataHora;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(referencedColumnName = "id", name = "local_id")
     private Local local;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(referencedColumnName = "id", name = "parceiro_id")
     private Parceiro parceiro;
 

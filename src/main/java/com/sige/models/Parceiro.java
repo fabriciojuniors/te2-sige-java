@@ -5,6 +5,7 @@
 package com.sige.models;
 
 import java.io.Serializable;
+import javax.json.bind.annotation.JsonbProperty;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,6 +38,7 @@ public class Parceiro implements Serializable{
     private String razaoSocial;
     
     @Column(nullable = false, length = 18, unique = true)
+    @JsonbProperty(value = "cnpj")
     private String CNPJ;
     
     @Column(nullable = false, length = 20)

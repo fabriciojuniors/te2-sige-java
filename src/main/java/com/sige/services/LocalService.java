@@ -93,7 +93,7 @@ public class LocalService {
     private void valida(Local local) {
 
         if (local.getId() > 0) {
-            if (existsByNome(local.getNome(), local.getId())) {
+            if (!existsByNome(local.getNome(), local.getId())) {
                 throw new WebApplicationException("O local " + local.getNome() + " já possui cadastro");
             }
         } else {
